@@ -29,7 +29,7 @@ if (Input::exists()) {
 	require_once('navigation.php');
 ?>
 <div class="container">
-	<div class="panel panel-default">
+	<div class="panel panel-info">
 	  <div class="panel-heading">
 	     <h3 class="panel-title text-center">Login Here</h3>
 	  </div>

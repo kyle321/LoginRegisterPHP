@@ -50,52 +50,70 @@ if (Input::exists()) {
 ?>
 
 <div class="container">
- <?php 
-	    if (isset($msg)) {
-	    	?>
-	    	<div class="alert alert-dismissible alert-danger">
-	  	  <button type="button" class="close" data-dismiss="alert">&times;</button>
-	  	   <ul>
-	  	  <?php 
-	  	  foreach ($msg as $error) {
-	  	  	?>
-	  	  	<li><?php echo $error;?></li>
-	  	  	<?php
-	  	  }
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+	     <h3 class="panel-title text-center">Register Here</h3>
+	  </div>
+	  <div class="panel-body">
+			 <?php 
+				    if (isset($msg)) {
+				    	?>
+				    	<div class="alert alert-dismissible alert-danger">
+				  	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  	   <ul>
+				  	  <?php 
+				  	  foreach ($msg as $error) {
+				  	  	?>
+				  	  	<li><?php echo $error;?></li>
+				  	  	<?php
+				  	  }
 
-	  	  ?>	  	
-	  	  </ul>
-	  	</div>
-	  	<?php 
-	    }
+				  	  ?>	  	
+				  	  </ul>
+				  	</div>
+				  	<?php 
+				    }
 
-	    ?>
-	<form  class="form-horizontal" method="POST" action="">
-		<div class="form-group">
-			<label for="username" class="col-lg-2 control-label">Username</label>
-			<input type="text" name="username" class="form-control" id="username" value="<?php echo escape(Input::get('username'));?>" autocomplete="off">
-		</div>
+				    ?>
+			<form  class="form-horizontal" method="POST" action="">
+				<div class="form-group">
+					<label for="username" class="col-lg-2 control-label">Username</label>
+					<div class="col-lg-10">
+						<input type="text" name="username" class="form-control" id="username" value="<?php echo escape(Input::get('username'));?>" autocomplete="off">
+					</div>
+				</div>
 
-		<div class="form-group">
-			<label for="password" class="col-lg-2 control-label">Password</label>
-			<input type="password" name="password" class="form-control" value="" id="password">
-		</div>
+				<div class="form-group">
+					<label for="password" class="col-lg-2 control-label">Password</label>
+					<div class="col-lg-10">
+						<input type="password" name="password" class="form-control" value="" id="password">
+					</div>
+				</div>
 
-		<div class="form-group">
-			<label for="confirm_password" class="col-lg-2 control-label">Confirm Password</label>
-			<input type="password" name="confirm_password" class="form-control" value="" id="confirm_password">
-		</div>
+				<div class="form-group">
+					<label for="confirm_password" class="col-lg-2 control-label">Confirm Password</label>
+					<div class="col-lg-10">
+						<input type="password" name="confirm_password" class="form-control" value="" id="confirm_password">
+					</div>
+				</div>
 
-		<div class="form-group">
-			<label for="name" class="col-lg-2 control-label">Name</label>
-			<input type="text" name="name" id="name" class="form-control" value="<?php echo escape(Input::get('name'));?>" >
+				<div class="form-group">
+					<label for="name" class="col-lg-2 control-label">Name</label>
+					<div class="col-lg-10">
+						<input type="text" name="name" id="name" class="form-control" value="<?php echo escape(Input::get('name'));?>" >
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+					<label for="name" class="col-lg-2 control-label"></label>
+					<div class="col-lg-10">
+						<input type="submit" class="form-control btn-info" name="submit" value="Submit">
+					</div>
+				</div>
+						
+			</form>
 		</div>
-		<div class="form-group">
-			<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-			<input type="submit" class="form-control btn-info" name="submit" value="Submit">
-		</div>
-				
-	</form>
+	</div>
 </div>
 <?php 
 

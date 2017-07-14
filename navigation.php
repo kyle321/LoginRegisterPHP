@@ -44,6 +44,7 @@ if (!$user->isLoggedIn()) {
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="profile.php?user=<?php echo $user->data()->username;?>">Profile</a></li>
         <li><a href="update.php">Change Info</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="logout.php">Logout</a></li>

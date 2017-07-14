@@ -49,6 +49,13 @@ class User{
 		}
 		return false;
 	}
+	public function make($fields=[])
+	{
+		if (!$this->_db->insert('message', $fields)) {
+			throw new Exception("There was a problem with inserting the message");
+			
+		}
+	}
 	public function hasPermission($key)
 	{
 		$group=$this->_db->get('groups',['id', '=', $this->data()->group]);
